@@ -1,6 +1,5 @@
 const $_ = (selector, node = document) => node.querySelector(selector);
 
-
 const userCount = $_(".user-count");
 const postCount = $_(".post-count");
 const usersList = $_(".js-users-list");
@@ -18,7 +17,7 @@ let creatUsersList = user => {
     $_(".user__name", userList).textContent = user.name;
     $_(".user__name", userList).dataset.id = user.id;
     $_(".user__email", userList).textContent = user.email;
-    $_(".user__email", userList).href = "email:" + user.email;
+    $_(".user__email", userList).href = "mailto:" + user.email;
     $_(".user__country", userList).textContent = user.address['city'];
     $_(".user__company", userList).textContent = user.company['name'];
     $_(".user__website", userList).textContent = user.website;
@@ -40,7 +39,7 @@ let creatCommentsList = comment => {
     $_(".comment__name", commentList).textContent = comment.name;
     $_(".comment__id", commentList).textContent = comment.postId;
     $_(".comment__email", commentList).textContent = comment.email;
-    $_(".comment__email", commentList).href = "email:" + comment.email;
+    $_(".comment__email", commentList).href = "mailto:" + comment.email;
     $_(".comment__body", commentList).textContent = comment.body;
     return commentList;
 }
